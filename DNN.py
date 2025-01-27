@@ -34,6 +34,8 @@ model_dnn.compile(optimizer=Adam(learning_rate=0.001), loss='mse', metrics=['mae
 
 history = model_dnn.fit(X_train, y_train, validation_split=0.2, epochs=100, batch_size=16, verbose=1)
 
+model_dnn.save("dnn_model.h5")
+
 loss, mae = model_dnn.evaluate(X_test, y_test, verbose=0)
 
 y_pred = model_dnn.predict(X_test)

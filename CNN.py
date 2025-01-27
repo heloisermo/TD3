@@ -31,5 +31,7 @@ model_cnn.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['a
 
 history = model_cnn.fit(X_train, y_train, epochs=50, batch_size=16, validation_split=0.2)
 
+model_cnn.save("cnn_model.h5")
+
 loss, accuracy = model_cnn.evaluate(X_test, y_test)
 print(f"Précision CNN : {accuracy:.2f}")

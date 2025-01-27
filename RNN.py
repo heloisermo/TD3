@@ -30,5 +30,7 @@ model_rnn.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['a
 
 history = model_rnn.fit(X_train, y_train, epochs=50, batch_size=16, validation_split=0.2)
 
+model_rnn.save("rnn_model.h5")
+
 loss, accuracy = model_rnn.evaluate(X_test, y_test)
 print(f"Précision RNN : {accuracy:.2f}")

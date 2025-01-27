@@ -30,5 +30,7 @@ model_lstm.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['
 
 history = model_lstm.fit(X_train, y_train, epochs=50, batch_size=16, validation_split=0.2)
 
+model_lstm.save("lstm_model.h5")
+
 loss, accuracy = model_lstm.evaluate(X_test, y_test)
 print(f"Précision LSTM : {accuracy:.2f}")
